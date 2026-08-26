@@ -1,0 +1,3479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Brother ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Baloo 2", cursive;
+            background: #fff5ef;
+            color: #7d2924;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =====================================================
+           SCREENS
+        ===================================================== */
+
+        .screen {
+            min-height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .card {
+            width: min(94%, 600px);
+            min-height: 650px;
+            background: #fffaf5;
+            border: 7px solid #e97858;
+            border-radius: 35px;
+            padding: 35px 25px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+
+            box-shadow:
+                0 15px 45px rgba(116, 43, 32, 0.15);
+        }
+
+        /* gingham pattern */
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    45deg,
+                    rgba(234, 113, 82, .10) 25%,
+                    transparent 25%
+                ) 0 0 / 22px 22px,
+
+                linear-gradient(
+                    -45deg,
+                    rgba(234, 113, 82, .10) 25%,
+                    transparent 25%
+                ) 0 0 / 22px 22px;
+
+            pointer-events: none;
+        }
+
+        /* =====================================================
+           TYPOGRAPHY
+        ===================================================== */
+
+        .title {
+            font-family: "Pacifico", cursive;
+            font-size: clamp(38px, 8vw, 58px);
+            line-height: 1.2;
+            color: #922a25;
+            position: relative;
+            z-index: 5;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 700;
+            color: #7d2924;
+            position: relative;
+            z-index: 5;
+            margin-top: 15px;
+        }
+
+        .small-text {
+            font-size: 18px;
+            color: #9b5a4e;
+            margin-top: 8px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .btn {
+            border: none;
+            background: #df442f;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 21px;
+            font-weight: 800;
+            cursor: pointer;
+
+            box-shadow: 0 6px 0 #a92c20;
+
+            transition: .2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #a92c20;
+        }
+
+        .btn.green {
+            background: #6ba64c;
+            box-shadow: 0 6px 0 #477b31;
+        }
+
+        /* =====================================================
+           FLOATING HEARTS
+        ===================================================== */
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            z-index: 2;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .h1 {
+            top: 8%;
+            left: 8%;
+        }
+
+        .h2 {
+            top: 15%;
+            right: 8%;
+            animation-delay: 1s;
+        }
+
+        .h3 {
+            bottom: 10%;
+            left: 10%;
+            animation-delay: .5s;
+        }
+
+        .h4 {
+            bottom: 13%;
+            right: 10%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        /* =====================================================
+           CUTE SIBLINGS
+        ===================================================== */
+
+        .cute-siblings {
+            width: 350px;
+            height: 300px;
+            margin: 20px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cartoon {
+            position: absolute;
+            bottom: 5px;
+            width: 150px;
+            height: 270px;
+        }
+
+        .sister-cartoon {
+            left: 5px;
+        }
+
+        .brother-cartoon {
+            right: 5px;
+        }
+
+        /* =====================================================
+           SISTER
+        ===================================================== */
+
+        .hair-back {
+            position: absolute;
+            width: 128px;
+            height: 180px;
+            left: 10px;
+            top: 10px;
+            background: #43261f;
+            border-radius: 65px 65px 45px 45px;
+            z-index: 1;
+        }
+
+        .face {
+            position: absolute;
+            width: 108px;
+            height: 108px;
+            left: 20px;
+            top: 22px;
+            background: #ffd0a8;
+            border-radius: 50%;
+            border: 3px solid #6e392b;
+            z-index: 4;
+        }
+
+        .hair-front {
+            position: absolute;
+            width: 112px;
+            height: 58px;
+            top: -7px;
+            left: -5px;
+            background: #43261f;
+            border-radius: 60% 60% 35% 35%;
+        }
+
+        .eye {
+            position: absolute;
+            width: 16px;
+            height: 21px;
+            background: #3a211c;
+            border-radius: 50%;
+            top: 49px;
+            z-index: 6;
+        }
+
+        .left-eye {
+            left: 25px;
+        }
+
+        .right-eye {
+            right: 25px;
+        }
+
+        .eye::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            left: 3px;
+            top: 3px;
+        }
+
+        .blush {
+            position: absolute;
+            width: 19px;
+            height: 9px;
+            background: #f38c87;
+            border-radius: 50%;
+            top: 70px;
+            opacity: .7;
+        }
+
+        .left-blush {
+            left: 10px;
+        }
+
+        .right-blush {
+            right: 10px;
+        }
+
+        .smile {
+            position: absolute;
+            width: 25px;
+            height: 14px;
+            border-bottom: 4px solid #8e2925;
+            border-radius: 50%;
+            left: 40px;
+            top: 72px;
+        }
+
+        .sister-body {
+            position: absolute;
+            width: 108px;
+            height: 105px;
+            left: 20px;
+            bottom: 5px;
+            background: #ec8fb4;
+            border-radius: 45px 45px 25px 25px;
+            z-index: 2;
+        }
+
+        .sleeve {
+            position: absolute;
+            width: 32px;
+            height: 62px;
+            background: #ec8fb4;
+            border-radius: 20px;
+            top: 15px;
+        }
+
+        .left-sleeve {
+            left: -17px;
+            transform: rotate(30deg);
+        }
+
+        .right-sleeve {
+            right: -17px;
+            transform: rotate(-30deg);
+        }
+
+        .hand {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background: #ffd0a8;
+            border-radius: 50%;
+            z-index: 6;
+        }
+
+        .sister-body .left-hand {
+            left: -15px;
+            top: 58px;
+        }
+
+        .sister-body .right-hand {
+            right: -15px;
+            top: 58px;
+        }
+
+        .bow {
+            position: absolute;
+            top: 25px;
+            left: -13px;
+            font-size: 45px;
+            z-index: 10;
+        }
+
+        /* =====================================================
+           BROTHER
+        ===================================================== */
+
+        .brother-cartoon .face {
+            background: #f7c99f;
+        }
+
+        .boy-hair {
+            position: absolute;
+            width: 112px;
+            height: 62px;
+            background: #352019;
+            top: -11px;
+            left: -6px;
+            border-radius: 60% 60% 30% 30%;
+            z-index: 6;
+        }
+
+        .boy-hair::before,
+        .boy-hair::after {
+            content: "";
+            position: absolute;
+            background: #352019;
+            width: 36px;
+            height: 36px;
+            top: 8px;
+            border-radius: 50%;
+        }
+
+        .boy-hair::before {
+            left: -12px;
+        }
+
+        .boy-hair::after {
+            right: -12px;
+        }
+
+        .brother-body {
+            position: absolute;
+            width: 112px;
+            height: 108px;
+            left: 18px;
+            bottom: 5px;
+            background: #df4938;
+            border-radius: 42px 42px 20px 20px;
+            z-index: 2;
+        }
+
+        .hood {
+            position: absolute;
+            width: 62px;
+            height: 37px;
+            border: 8px solid #a52b23;
+            border-bottom: none;
+            border-radius: 40px 40px 0 0;
+            left: 25px;
+            top: -16px;
+        }
+
+        .brother-body .left-hand {
+            left: -15px;
+            top: 48px;
+        }
+
+        .brother-body .right-hand {
+            right: -15px;
+            top: 48px;
+        }
+
+        .cute-siblings::before {
+            content: "❤️";
+            position: absolute;
+            top: 0;
+            left: 155px;
+            font-size: 32px;
+            animation: heartPop 1.5s infinite;
+        }
+
+        @keyframes heartPop {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* =====================================================
+           EXCITED SCREEN
+        ===================================================== */
+
+        .excited-siblings {
+            animation: excitedFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes excitedFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .excited-siblings::after {
+            content: "✨  ❤️  ✨";
+            position: absolute;
+            top: -15px;
+            left: 105px;
+            font-size: 23px;
+            animation: sparkle 1s infinite alternate;
+        }
+
+        @keyframes sparkle {
+
+            from {
+                opacity: .4;
+                transform: scale(.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .excitement {
+            font-family: "Pacifico", cursive;
+            font-size: 43px;
+            line-height: 1.25;
+            color: #962b26;
+            margin-top: 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* =====================================================
+           ANGRY BROTHER
+        ===================================================== */
+
+        .angry {
+            font-family: "Pacifico", cursive;
+            font-size: clamp(42px, 10vw, 58px);
+            color: #a82c25;
+            margin-top: 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .angry-brother {
+            width: 190px;
+            height: 280px;
+            position: relative;
+            margin: 15px auto 0;
+            animation: angryShake .25s infinite alternate;
+        }
+
+        @keyframes angryShake {
+
+            from {
+                transform: rotate(-2deg);
+            }
+
+            to {
+                transform: rotate(2deg);
+            }
+        }
+
+        .angry-face {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            background: #f7c99f;
+            border: 4px solid #633226;
+            border-radius: 50%;
+            left: 30px;
+            top: 10px;
+            z-index: 3;
+        }
+
+        .angry-hair {
+            position: absolute;
+            width: 135px;
+            height: 68px;
+            background: #352019;
+            border-radius: 65% 65% 30% 30%;
+            left: -6px;
+            top: -12px;
+        }
+
+        .angry-eye {
+            position: absolute;
+            width: 15px;
+            height: 22px;
+            background: #241512;
+            border-radius: 50%;
+            top: 63px;
+            z-index: 5;
+        }
+
+        .angry-eye.left {
+            left: 30px;
+        }
+
+        .angry-eye.right {
+            right: 30px;
+        }
+
+        .angry-eyebrow {
+            position: absolute;
+            width: 38px;
+            height: 8px;
+            background: #352019;
+            border-radius: 10px;
+            top: 49px;
+            z-index: 6;
+        }
+
+        .angry-eyebrow.left {
+            left: 19px;
+            transform: rotate(25deg);
+        }
+
+        .angry-eyebrow.right {
+            right: 19px;
+            transform: rotate(-25deg);
+        }
+
+        .angry-mouth {
+            position: absolute;
+            width: 38px;
+            height: 15px;
+            border-top: 5px solid #72241e;
+            border-radius: 50%;
+            left: 42px;
+            top: 96px;
+        }
+
+        .angry-body {
+            position: absolute;
+            width: 135px;
+            height: 125px;
+            left: 27px;
+            bottom: 5px;
+            background: #df4938;
+            border-radius: 45px 45px 20px 20px;
+        }
+
+        .angry-arm {
+            position: absolute;
+            width: 92px;
+            height: 25px;
+            background: #f7c99f;
+            border-radius: 20px;
+            top: 38px;
+        }
+
+        .angry-arm.left {
+            left: -18px;
+            transform: rotate(25deg);
+        }
+
+        .angry-arm.right {
+            right: -18px;
+            transform: rotate(-25deg);
+        }
+
+        .angry-brother::before {
+            content: "💢";
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            font-size: 35px;
+        }
+
+        .angry-brother::after {
+            content: "💢";
+            position: absolute;
+            right: -5px;
+            top: 55px;
+            font-size: 30px;
+        }
+
+        /* =====================================================
+           LETTER
+        ===================================================== */
+
+        .letter-title {
+            font-family: "Pacifico", cursive;
+            font-size: 43px;
+            color: #922a25;
+            position: relative;
+            z-index: 5;
+        }
+
+        .letter-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .mini-siblings {
+            font-size: 90px;
+            min-width: 150px;
+        }
+
+        .letter {
+            background: white;
+            border: 2px solid #f0b4a4;
+            border-radius: 20px;
+            padding: 24px;
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.6;
+            box-shadow: 0 7px 20px rgba(110, 40, 30, .10);
+            position: relative;
+            z-index: 5;
+        }
+
+        .letter strong {
+            color: #b4322b;
+        }
+
+        /* =====================================================
+           MEMORIES
+        ===================================================== */
+
+        .memory-title {
+            font-family: "Pacifico", cursive;
+            font-size: 43px;
+            color: #922a25;
+            position: relative;
+            z-index: 5;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            width: 100%;
+            margin-top: 25px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .memory {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(100, 40, 30, .12);
+            transform: rotate(-2deg);
+        }
+
+        .memory:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .memory img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 145px;
+            background: #ffe0d3;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+        }
+
+        .memory p {
+            font-size: 17px;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        /* =====================================================
+           SURPRISE
+        ===================================================== */
+
+        .surprise-screen {
+            background:
+                radial-gradient(circle at center,
+                    #731d35,
+                    #350817 65%,
+                    #18030c);
+            color: white;
+        }
+
+        .surprise-card {
+            background: transparent;
+            border-color: #e78a76;
+            box-shadow: 0 0 50px rgba(255, 100, 100, .25);
+        }
+
+        .surprise-title {
+            font-family: "Pacifico", cursive;
+            font-size: 43px;
+            color: #ffd8cd;
+            position: relative;
+            z-index: 5;
+        }
+
+        .gift {
+            font-size: 150px;
+            margin-top: 60px;
+            cursor: pointer;
+            animation: giftBounce 1.2s infinite;
+            position: relative;
+            z-index: 10;
+            filter: drop-shadow(0 10px 20px rgba(255, 200, 100, .3));
+        }
+
+        @keyframes giftBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-17px) rotate(3deg);
+            }
+        }
+
+        .gift-text {
+            color: #ffe3db;
+            font-size: 22px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* =====================================================
+           FINAL SCREEN
+        ===================================================== */
+
+        .final-rakhi {
+            font-size: 95px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .final-title {
+            font-family: "Pacifico", cursive;
+            font-size: clamp(38px, 9vw, 55px);
+            color: #a72e28;
+            line-height: 1.2;
+            margin-top: 10px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .final-message {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            margin-top: 25px;
+            font-size: 20px;
+            line-height: 1.6;
+            box-shadow: 0 7px 25px rgba(100, 40, 30, .12);
+            position: relative;
+            z-index: 5;
+        }
+
+        .final-message strong {
+            color: #b6322c;
+        }
+
+        /* =====================================================
+           CONFETTI
+        ===================================================== */
+
+        .confetti {
+            position: fixed;
+            top: -30px;
+            z-index: 1000;
+            animation: fall linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =====================================================
+           MUSIC
+        ===================================================== */
+
+        .music-button {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: #d9402c;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width: 600px) {
+
+            .screen {
+                padding: 15px 8px;
+            }
+
+            .card {
+                width: 96%;
+                min-height: 650px;
+                padding: 28px 15px;
+                border-width: 5px;
+            }
+
+            .title {
+                font-size: 39px;
+            }
+
+            .subtitle {
+                font-size: 21px;
+            }
+
+            .cute-siblings {
+                transform: scale(.85);
+                margin-top: 5px;
+                margin-bottom: -15px;
+            }
+
+            .excitement {
+                font-size: 37px;
+            }
+
+            .letter-layout {
+                flex-direction: column;
+            }
+
+            .mini-siblings {
+                font-size: 70px;
+            }
+
+            .letter {
+                font-size: 16px;
+            }
+
+            .memory-grid {
+                gap: 10px;
+            }
+
+            .memory img,
+            .placeholder {
+                height: 105px;
+            }
+
+            .memory p {
+                font-size: 15px;
+            }
+
+            .surprise-title {
+                font-size: 37px;
+            }
+
+            .gift {
+                font-size: 120px;
+            }
+
+            .final-message {
+                font-size: 17px;
+            }
+        }
+    /* =====================================================
+   BEAUTIFUL GIFT OPENING
+===================================================== */
+
+.gift-box {
+    width: 190px;
+    height: 190px;
+    position: relative;
+    margin: 70px auto 25px;
+    cursor: pointer;
+    z-index: 20;
+
+    animation: giftFloat 2s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* GIFT BODY */
+
+.gift-body {
+    position: absolute;
+    width: 150px;
+    height: 115px;
+    left: 20px;
+    bottom: 5px;
+
+    background: #df4938;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 12px 20px rgba(0,0,0,.25);
+}
+
+
+/* LID */
+
+.gift-lid {
+    position: absolute;
+    width: 175px;
+    height: 45px;
+    left: 7px;
+    top: 45px;
+
+    background: #f05a43;
+
+    border-radius: 8px;
+
+    z-index: 4;
+
+    box-shadow:
+        0 8px 12px rgba(0,0,0,.2);
+
+    transition: 1s ease;
+}
+
+
+/* RIBBON VERTICAL */
+
+.gift-ribbon-vertical {
+    position: absolute;
+
+    width: 28px;
+    height: 115px;
+
+    background: #ffd36b;
+
+    left: 61px;
+    top: 0;
+}
+
+
+/* RIBBON HORIZONTAL */
+
+.gift-ribbon-horizontal {
+    position: absolute;
+
+    width: 150px;
+    height: 22px;
+
+    background: #ffd36b;
+
+    left: 0;
+    top: 38px;
+}
+
+
+/* BOW */
+
+.gift-lid::before,
+.gift-lid::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 48px;
+    height: 35px;
+
+    background: #ffd36b;
+
+    border-radius: 50%;
+    
+    top: -28px;
+}
+
+.gift-lid::before {
+    left: 42px;
+    transform: rotate(25deg);
+}
+
+.gift-lid::after {
+    right: 42px;
+    transform: rotate(-25deg);
+}
+
+
+/* =====================================================
+   OPEN GIFT
+===================================================== */
+
+.gift-box.opening .gift-lid {
+
+    transform:
+        translateY(-100px)
+        rotate(-8deg);
+
+    opacity: 0;
+}
+
+
+.gift-box.opening {
+
+    animation: none;
+}
+
+
+/* =====================================================
+   RAKHI REVEAL
+===================================================== */
+
+.rakhi-reveal {
+
+    display: none;
+
+    position: relative;
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    animation: revealRakhi 1.5s ease forwards;
+}
+
+
+.rakhi-reveal.show {
+    display: block;
+}
+
+
+@keyframes revealRakhi {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.7);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+/* =====================================================
+   GLOW
+===================================================== */
+
+.glow {
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: 50%;
+    top: 30px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,215,100,.65),
+            rgba(255,215,100,0)
+        );
+
+    filter: blur(8px);
+
+    animation: glowPulse 2s infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes glowPulse {
+
+    0%,100% {
+        transform:
+            translateX(-50%)
+            scale(.8);
+
+        opacity: .5;
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   RAKHI
+===================================================== */
+
+.rakhi {
+
+    width: 180px;
+    height: 180px;
+
+    margin: 10px auto 15px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            #e63946 0deg 10deg,
+            #ffd166 10deg 20deg
+        );
+
+    box-shadow:
+        0 0 25px rgba(255,200,80,.8);
+
+    animation:
+        rakhiSpin 8s linear infinite;
+}
+
+
+@keyframes rakhiSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* CENTER */
+
+.rakhi-center {
+
+    width: 95px;
+    height: 95px;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffd166,
+            #e89b22
+        );
+
+    border-radius: 50%;
+
+    border: 7px solid #fff1a8;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+
+    color: #9c281f;
+
+    font-family: serif;
+
+    box-shadow:
+        0 0 20px rgba(255,255,150,.9);
+
+    z-index: 5;
+}
+
+
+/* BEADS */
+
+.rakhi-bead {
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background: #b51f2b;
+
+    border-radius: 50%;
+
+    border: 3px solid #ffd166;
+}
+
+
+.bead1 {
+    top: 20px;
+    left: 45px;
+}
+
+.bead2 {
+    top: 20px;
+    right: 45px;
+}
+
+.bead3 {
+    bottom: 20px;
+    left: 45px;
+}
+
+.bead4 {
+    bottom: 20px;
+    right: 45px;
+}
+
+/* =====================================================
+   BUNNY FRONT
+===================================================== */
+
+.bunny-front-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.bunny-front {
+    width: min(90%, 360px);
+    max-height: 320px;
+    object-fit: contain;
+    display: block;
+    animation: bunnyFloat 3s ease-in-out infinite;
+}
+
+@keyframes bunnyFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* =====================================================
+   RAKHI MESSAGE
+===================================================== */
+
+.rakhi-message {
+
+    color: #ffe9df;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    margin: 15px auto 20px;
+
+    max-width: 400px;
+}
+
+
+.rakhi-message strong {
+
+    color: #ffd166;
+
+    font-size: 24px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px) {
+
+    .gift-box {
+
+        transform: scale(.85);
+
+        margin-top: 50px;
+    }
+
+    .rakhi {
+
+        width: 150px;
+        height: 150px;
+    }
+
+    .rakhi-center {
+
+        width: 78px;
+        height: 78px;
+
+        font-size: 34px;
+    }
+
+    .rakhi-message {
+
+        font-size: 18px;
+    }
+
+}
+/* =====================================================
+   FINAL RAKSHA BANDHAN PAGE
+===================================================== */
+
+.final-card {
+    padding-top: 30px;
+}
+
+.final-rakhi {
+    font-size: 90px;
+
+    animation:
+        rakhiFloat 2s ease-in-out infinite;
+
+    position: relative;
+    z-index: 5;
+}
+
+@keyframes rakhiFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+/* FINAL TITLE */
+
+.final-title {
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(38px, 9vw, 56px);
+
+    line-height: 1.2;
+
+    color: #a72e28;
+
+    margin-top: 5px;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* BROTHER + SISTER */
+
+.final-cartoon {
+    font-size: 82px;
+
+    margin: 12px auto;
+
+    position: relative;
+    z-index: 5;
+
+    animation:
+        coupleFloat 3s ease-in-out infinite;
+}
+
+.final-cartoon span {
+    font-size: 45px;
+
+    display: inline-block;
+
+    animation:
+        heartPop 1.3s infinite;
+}
+
+
+@keyframes coupleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* FINAL MESSAGE */
+
+.final-message {
+
+    max-width: 470px;
+
+    margin: 15px auto 0;
+
+    background: white;
+
+    padding: 22px 25px;
+
+    border-radius: 25px;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #704039;
+
+    box-shadow:
+        0 8px 25px rgba(100, 40, 30, .12);
+
+    position: relative;
+    z-index: 5;
+}
+
+.final-message strong {
+    color: #b6322c;
+}
+
+
+/* FINAL BUTTON */
+
+.final-button {
+    margin-top: 22px;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* FINAL WISH */
+
+.final-wish {
+
+    display: none;
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 27px;
+
+    color: #b52f29;
+
+    margin-top: 20px;
+
+    animation:
+        wishAppear 1s ease forwards;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+.final-wish.show {
+    display: block;
+}
+
+
+@keyframes wishAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .final-rakhi {
+        font-size: 70px;
+    }
+
+    .final-cartoon {
+        font-size: 65px;
+    }
+
+    .final-cartoon span {
+        font-size: 35px;
+    }
+
+    .final-message {
+        font-size: 16px;
+        padding: 18px;
+    }
+
+}
+/* =====================================================
+   SCREEN 1 - CLEAN BUNNY LAYOUT
+===================================================== */
+
+#screen1 {
+    position: relative;
+}
+
+#screen1 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 650px;
+}
+
+#screen1 .title {
+    margin-bottom: 10px;
+}
+
+#screen1 .bunny-front-container {
+    margin: 20px auto 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#screen1 .bunny-front {
+    width: min(90%, 360px);
+    max-height: 330px;
+    object-fit: contain;
+}
+
+#screen1 .subtitle {
+    margin-top: 18px;
+}
+
+#screen1 .buttons {
+    margin-top: 20px;
+}
+/* =====================================================
+   SCREEN 2 BUNNY
+===================================================== */
+
+.bunny-screen2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.bunny2-image {
+    width: min(90%, 360px);
+    max-height: 330px;
+    object-fit: contain;
+    display: block;
+
+    animation: bunnyFloat 3s ease-in-out infinite;
+}
+/* =====================================================
+   SCREEN 3 - BUNNY STYLE
+===================================================== */
+
+#screen3 {
+    background: #fff5ef;
+}
+
+#screen3 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 650px;
+    padding: 35px 25px;
+}
+
+/* HOW DARE YOU */
+
+#screen3 .angry {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(40px, 9vw, 58px);
+    line-height: 1.2;
+    color: #a82c25;
+    margin-top: 5px;
+    position: relative;
+    z-index: 5;
+}
+
+/* BUNNY IMAGE */
+
+.bunny-screen3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto 5px;
+    position: relative;
+    z-index: 10;
+}
+
+.bunny3-image {
+    width: min(90%, 360px);
+    max-height: 330px;
+    object-fit: contain;
+    display: block;
+
+    animation: bunnyFloat 3s ease-in-out infinite;
+}
+
+/* QUESTION */
+
+#screen3 .subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7d2924;
+    margin-top: 15px;
+    position: relative;
+    z-index: 5;
+}
+
+/* SMALL TEXT */
+
+#screen3 .small-text {
+    font-size: 19px;
+    color: #9b5a4e;
+    margin-top: 5px;
+    position: relative;
+    z-index: 5;
+}
+
+/* TRY AGAIN BUTTON */
+
+#screen3 .btn {
+    margin-top: 25px !important;
+    position: relative;
+    z-index: 20;
+}
+
+/* BUNNY FLOATING ANIMATION */
+
+@keyframes bunnyFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+    #screen3 .card {
+        min-height: 620px;
+        padding: 30px 15px;
+    }
+
+    #screen3 .angry {
+        font-size: 40px;
+    }
+
+    .bunny3-image {
+        width: 90%;
+        max-height: 280px;
+    }
+
+    #screen3 .subtitle {
+        font-size: 21px;
+    }
+
+    #screen3 .small-text {
+        font-size: 17px;
+    }
+}
+/* =====================================================
+   SCREEN 4 - VERTICAL LETTER
+===================================================== */
+
+#screen4 {
+    padding: 20px 15px;
+}
+
+.letter-card {
+    width: min(94%, 700px);
+    min-height: 700px;
+    padding: 30px 25px;
+    text-align: center;
+}
+
+/* TITLE */
+
+.letter-card .letter-title {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(38px, 7vw, 52px);
+    line-height: 1.2;
+    color: #922a25;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 5;
+}
+
+/* BUNNY */
+
+.letter-bunny {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto 15px;
+    position: relative;
+    z-index: 5;
+}
+
+.bunny4-image {
+    width: min(55%, 280px);
+    max-height: 230px;
+    object-fit: contain;
+    display: block;
+
+    animation: bunnyFloat 3s ease-in-out infinite;
+}
+
+/* LETTER */
+
+.letter-card > .letter {
+    width: min(100%, 580px);
+    margin: 0 auto;
+
+    background: white;
+    border: 2px solid #f0b4a4;
+    border-radius: 20px;
+
+    padding: 25px 28px;
+
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.6;
+
+    box-shadow:
+        0 7px 20px rgba(110, 40, 30, .10);
+
+    position: relative;
+    z-index: 5;
+}
+
+/* LETTER TEXT */
+
+.letter-card > .letter strong {
+    color: #b4322b;
+}
+
+/* CONTINUE BUTTON */
+
+.letter-button {
+    margin-top: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+/* BUNNY ANIMATION */
+
+@keyframes bunnyFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 600px) {
+
+    .letter-card {
+        width: 96%;
+        padding: 25px 15px;
+    }
+
+    .letter-card .letter-title {
+        font-size: 36px;
+    }
+
+    .bunny4-image {
+        width: 65%;
+        max-height: 200px;
+    }
+
+    .letter-card > .letter {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   BUNNY OPENING
+===================================================== */
+
+.bunny-gift.opening {
+
+    animation: bunnyOpen 1s ease forwards;
+}
+
+
+@keyframes bunnyOpen {
+
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    40% {
+        transform: translateY(-35px) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(-100px) scale(.7);
+        opacity: 0;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .bunny-gift {
+        margin-top: 35px;
+    }
+
+    .bunny5 {
+        width: 320px;
+        max-width: 90%;
+    }
+
+    .bunny-glow {
+        width: 280px;
+        height: 280px;
+    }
+
+}
+
+
+/* BUNNY IMAGE */
+
+.bunny5-image {
+    width: min(75%, 350px);
+    max-height: 350px;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(0 12px 15px rgba(0, 0, 0, .20));
+
+    transition: transform .25s ease;
+}
+
+
+/* FLOATING LIKE A GIFT */
+
+@keyframes bunnyGiftFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* CLICK EFFECT */
+
+.bunny-gift:active {
+    transform: scale(.92);
+}
+
+
+/* HOVER EFFECT */
+
+.bunny-gift:hover .bunny5-image {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px) {
+
+    .bunny-gift {
+        margin-top: 40px;
+    }
+
+    .bunny5-image {
+        width: 80%;
+        max-height: 280px;
+    }
+
+}
+/* =====================================================
+   ANIMATED GIFT BOX
+===================================================== */
+
+.gift-box {
+    width: 210px;
+    height: 220px;
+    position: relative;
+    margin: 65px auto 30px;
+    cursor: pointer;
+    z-index: 20;
+
+    animation: giftFloat 2s ease-in-out infinite;
+
+    transition:
+        transform .8s ease,
+        opacity .8s ease;
+}
+
+
+/* FLOATING */
+
+@keyframes giftFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(2deg);
+    }
+
+}
+
+
+/* =====================================================
+   GLOW
+===================================================== */
+
+.gift-glow {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 215, 100, .55),
+            rgba(255, 100, 120, 0) 70%
+        );
+
+    filter: blur(12px);
+
+    z-index: -2;
+
+    animation: giftGlow 2s ease-in-out infinite;
+}
+
+
+@keyframes giftGlow {
+
+    0%, 100% {
+        opacity: .45;
+        transform: translate(-50%, -50%) scale(.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   GIFT BODY
+===================================================== */
+
+.gift-body {
+    position: absolute;
+
+    width: 155px;
+    height: 120px;
+
+    left: 27px;
+    bottom: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5b62,
+            #d92f4b
+        );
+
+    border-radius: 8px 8px 15px 15px;
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,.30);
+
+    overflow: hidden;
+}
+
+
+/* GOLD VERTICAL RIBBON */
+
+.gift-ribbon-vertical {
+    position: absolute;
+
+    width: 30px;
+    height: 120px;
+
+    left: 63px;
+    top: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffd45c,
+            #fff0a3,
+            #f4b72d
+        );
+
+    box-shadow:
+        0 0 8px rgba(255,220,100,.5);
+}
+
+
+/* SHINE */
+
+.gift-shine {
+    position: absolute;
+
+    width: 22px;
+    height: 70px;
+
+    left: 20px;
+    top: 20px;
+
+    background: rgba(255,255,255,.18);
+
+    border-radius: 50%;
+
+    transform: rotate(25deg);
+}
+
+
+/* =====================================================
+   GIFT LID
+===================================================== */
+
+.gift-lid {
+    position: absolute;
+
+    width: 180px;
+    height: 48px;
+
+    left: 14px;
+    top: 62px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6870,
+            #e43b50
+        );
+
+    border-radius: 9px;
+
+    z-index: 5;
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,.28);
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1),
+        opacity .7s ease;
+}
+
+
+/* LID GOLD RIBBON */
+
+.gift-lid::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 48px;
+
+    left: 75px;
+    top: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffd45c,
+            #fff0a3,
+            #f4b72d
+        );
+}
+
+
+/* =====================================================
+   BOW
+===================================================== */
+
+.bow-left,
+.bow-right {
+
+    position: absolute;
+
+    width: 58px;
+    height: 42px;
+
+    top: -35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd45c,
+            #f5b72e
+        );
+
+    border-radius: 60% 40% 60% 40%;
+
+    box-shadow:
+        0 4px 8px rgba(0,0,0,.18);
+}
+
+
+.bow-left {
+    left: 35px;
+    transform: rotate(25deg);
+}
+
+
+.bow-right {
+    right: 35px;
+    transform: rotate(-25deg);
+}
+
+
+.bow-center {
+
+    position: absolute;
+
+    width: 27px;
+    height: 27px;
+
+    top: -24px;
+    left: 76px;
+
+    background: #f3b52e;
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+    box-shadow:
+        0 3px 7px rgba(0,0,0,.2);
+}
+
+
+/* =====================================================
+   CLICK / OPEN ANIMATION
+===================================================== */
+
+.gift-box.opening {
+
+    animation:
+        giftGoInside 1.2s cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+.gift-box.opening .gift-lid {
+
+    transform:
+        translateY(-95px)
+        rotate(-12deg);
+
+    opacity: 0;
+}
+
+
+/* THE WHOLE PRESENT GOES INSIDE */
+
+@keyframes giftGoInside {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    35% {
+        transform:
+            translateY(-25px)
+            scale(1.08)
+            rotate(-3deg);
+
+        opacity: 1;
+    }
+
+    70% {
+        transform:
+            translateY(15px)
+            scale(.75)
+            rotate(5deg);
+
+        opacity: .8;
+    }
+
+    100% {
+        transform:
+            translateY(80px)
+            scale(.05)
+            rotate(15deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px) {
+
+    .gift-box {
+        transform: scale(.85);
+        margin-top: 45px;
+    }
+
+    .gift-box.opening {
+        animation:
+            giftGoInsideMobile 1.2s
+            cubic-bezier(.2,.8,.2,1)
+            forwards;
+    }
+
+}
+
+
+@keyframes giftGoInsideMobile {
+
+    0% {
+        transform: scale(.85) translateY(0);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(.92) translateY(-20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(.02) translateY(70px);
+        opacity: 0;
+    }
+
+}
+/* =====================================================
+   RAKHI TYING GIF
+===================================================== */
+
+.rakhi-gif-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    margin: 20px auto 10px;
+
+    z-index: 5;
+}
+
+
+/* GLOW BEHIND HAND */
+
+.rakhi-gif-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 210, 90, .65),
+            rgba(255, 100, 120, 0) 70%
+        );
+
+    filter: blur(15px);
+
+    animation: handGlow 2s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes handGlow {
+
+    0%, 100% {
+        opacity: .45;
+        transform:
+            translate(-50%, -50%)
+            scale(.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+    }
+}
+
+
+/* ACTUAL GIF */
+
+.rakhi-tying-gif {
+
+    width: min(90%, 390px);
+
+    max-height: 320px;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 25px;
+
+    filter:
+        drop-shadow(
+            0 12px 20px
+            rgba(0, 0, 0, .25)
+        );
+
+    animation: gifAppear 1s ease forwards;
+}
+
+
+@keyframes gifAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.75) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .rakhi-gif-container {
+        margin-top: 10px;
+    }
+
+    .rakhi-tying-gif {
+        width: 95%;
+        max-height: 280px;
+    }
+
+    .rakhi-gif-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+}
+
+/* =====================================================
+   FINAL SISTER + BROTHER PHOTOS
+===================================================== */
+
+.final-cartoon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 5;
+    animation: coupleFloat 3s ease-in-out infinite;
+}
+
+/* =====================================================
+   FINAL PHOTO CIRCLES
+===================================================== */
+
+.final-cartoon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 5;
+
+    animation: coupleFloat 3s ease-in-out infinite;
+}
+
+/* THE ACTUAL CIRCLE */
+.face-circle {
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 6px 18px rgba(100, 40, 30, .20);
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+/* PHOTO INSIDE CIRCLE */
+.face-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    /*
+       IMPORTANT:
+       Enlarges the photo so the white
+       space inside sister.jpeg is cropped.
+    */
+    transform: scale(1.45);
+
+    object-position: center center;
+}
+
+.final-cartoon span {
+    font-size: 40px;
+    display: inline-block;
+    animation: heartPop 1.3s infinite;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .face-circle {
+        width: 85px;
+        height: 85px;
+    }
+
+    .face-circle img {
+        transform: scale(1.45);
+    }
+
+    .final-cartoon {
+        gap: 12px;
+    }
+
+    .final-cartoon span {
+        font-size: 32px;
+    }
+}
+
+.final-cartoon span {
+    font-size: 40px;
+    display: inline-block;
+    animation: heartPop 1.3s infinite;
+}
+
+@media(max-width:600px) {
+
+    .final-face {
+        width: 85px;
+        height: 85px;
+    }
+
+    .final-cartoon {
+        gap: 12px;
+    }
+
+    .final-cartoon span {
+        font-size: 32px;
+    }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MUSIC BUTTON
+===================================================== -->
+
+<button class="music-button" onclick="toggleMusic()">
+    ♫
+</button>
+
+
+<!-- =====================================================
+     SCREEN 1
+===================================================== -->
+
+<!-- =====================================================
+     SCREEN 1
+===================================================== -->
+
+<section id="screen1" class="screen active">
+
+    <div class="card">
+
+        <!-- TITLE -->
+
+        <div class="title">
+            I have made<br>
+            something for you
+        </div>
+
+
+        <!-- ONLY BUNNY IMAGE -->
+
+        <div class="bunny-front-container">
+
+            <img
+                src="bunny1.jpeg"
+                alt="Cute bunny siblings"
+                class="bunny-front"
+            >
+
+        </div>
+
+
+        <!-- QUESTION BELOW IMAGE -->
+
+        <div class="subtitle">
+            Do you wanna see it? 👀
+        </div>
+
+
+        <!-- BUTTONS BELOW QUESTION -->
+
+        <div class="buttons">
+
+            <button class="btn green" onclick="yesClicked()">
+                YES ❤️
+            </button>
+
+            <button class="btn" onclick="noClicked()">
+                NO 😏
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 2
+===================================================== -->
+
+<section id="screen2" class="screen">
+
+    <span class="heart h1">❤️</span>
+    <span class="heart h2">✨</span>
+
+    <div class="card">
+
+        <div class="excitement">
+            Are you really<br>
+            excited? 🥹
+        </div>
+
+        <!-- BUNNY 2 -->
+
+        <div class="bunny-screen2">
+
+            <img
+                src="bunny2.jpeg"
+                alt="Cute bunny"
+                class="bunny2-image"
+            >
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="btn green" onclick="openLetter()">
+                YES ❤️
+            </button>
+
+            <button class="btn" onclick="openLetter()">
+                YES 😌
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 3 — NO
+===================================================== -->
+
+<section id="screen3" class="screen">
+
+    <div class="card">
+
+        <div class="angry">
+            HOW DARE YOU! 😤
+        </div>
+
+        <!-- BUNNY 3 -->
+
+        <div class="bunny-screen3">
+
+            <img
+                src="bunny3.jpeg"
+                alt="Angry cute bunny"
+                class="bunny3-image"
+            >
+
+        </div>
+
+        <div class="subtitle">
+            You clicked NO? Really? 😑
+        </div>
+
+        <div class="small-text">
+            How dare you
+        </div>
+
+        <button
+            class="btn"
+            style="margin-top:30px;"
+            onclick="goTo('screen1')"
+        >
+            TRY AGAIN 😜
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 4 — LETTER
+===================================================== -->
+
+<!-- =====================================================
+     SCREEN 4 — LETTER
+===================================================== -->
+
+<section id="screen4" class="screen">
+
+    <div class="card letter-card">
+
+        <div class="letter-title">
+            A Little Letter For You 💌
+        </div>
+
+        <!-- BUNNY 4 -->
+
+        <div class="letter-bunny">
+
+            <img
+                src="bunny4.jpeg"
+                alt="Cute bunny"
+                class="bunny4-image"
+            >
+
+        </div>
+
+
+        <!-- LETTER -->
+
+        <div class="letter">
+
+            <strong>Dear Brother, ❤️</strong>
+
+            <br><br>
+
+            I don't always say it, but having you as my
+            brother is one of the best things in my life.
+
+            <br><br>
+
+            We have fought, teased each other, annoyed
+            each other and laughed at the silliest things.
+
+            <br><br>
+
+            But at the end of the day, no matter what
+            happens, you have been my support system...
+
+            <br><br>
+
+            Thank you for being my protector
+
+            <br><br>
+
+            I may not say it every day...
+
+            <br><br>
+
+            <strong>
+                But I am really lucky to have you as my
+                brother ignoring the mess you will be creating. ❤️
+            </strong>
+
+            <br><br>
+
+            Happy Raksha Bandhan Anne! 😍
+
+            <br><br>
+
+            Always yours,
+
+            <br>
+
+            <strong>Aarthi 💕</strong>
+
+        </div>
+
+
+        <button
+            class="btn letter-button"
+            onclick="showMemories()"
+        >
+            Continue ➜
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 5 — MEMORIES
+===================================================== -->
+
+<section id="screen5" class="screen">
+
+    <div class="card">
+
+        <div class="memory-title">
+            Our Memories 📸
+        </div>
+
+        <div class="small-text">
+            Some of my favourite moments with you ❤️
+        </div>
+
+
+        <div class="memory-grid">
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="memory">
+
+                <img
+                    src="photo1.jpeg"
+                    alt="Childhood memory"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="placeholder" style="display:none;">
+                    👧🏻👦🏻
+                </div>
+
+                <p>
+                    Little Us 🥹
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="memory">
+
+                <img
+                    src="photo2.jpeg"
+                    alt="Funny memory"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="placeholder" style="display:none;">
+                    😂
+                </div>
+
+                <p>
+                    Our Smiles 😂
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="memory">
+
+                <img
+                    src="photo3.jpeg"
+                    alt="Memory together"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="placeholder" style="display:none;">
+                    🤝
+                </div>
+
+                <p>
+                    Partners in Crime 🤝
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div class="memory">
+
+                <img
+                    src="photo4.jpeg"
+                    alt="Favourite memory"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="placeholder" style="display:none;">
+                    ❤️
+                </div>
+
+                <p>
+                    Memories Forever ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="btn" style="margin-top:30px;" onclick="showSurprise()">
+            One More Surprise 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 6 — SURPRISE
+===================================================== -->
+
+<section id="screen6" class="screen surprise-screen">
+
+    <div class="card surprise-card">
+
+        <div class="surprise-title">
+            A Little Surprise For You ..
+        </div>
+
+        <div class="gift-text" id="giftInstruction">
+    Tap the gift to open it 👀
+</div>
+
+
+        <!-- BUNNY GIFT -->
+        <!-- GIFT BOX -->
+<div class="gift-box" id="giftBox" onclick="openGift()">
+
+    <div class="gift-glow"></div>
+
+    <div class="gift-lid">
+
+        <div class="bow-left"></div>
+        <div class="bow-right"></div>
+        <div class="bow-center"></div>
+
+    </div>
+
+    <div class="gift-body">
+
+        <div class="gift-ribbon-vertical"></div>
+
+        <div class="gift-shine"></div>
+
+    </div>
+
+</div>
+
+
+        <!-- RAKHI REVEAL -->
+
+        <!-- RAKHI TYING REVEAL -->
+
+<div class="rakhi-reveal" id="rakhiReveal">
+
+    <div class="rakhi-gif-container">
+
+        <div class="rakhi-gif-glow"></div>
+
+        <img
+            src="rakhi-tying.jpeg"
+            alt="Rakhi being tied on brother's wrist"
+            class="rakhi-tying-gif"
+        >
+
+    </div>
+
+    <div class="rakhi-message">
+
+        This Rakhi is a promise...
+
+        <br>
+
+        <strong>
+            I'll always be there for you. ❤️
+        </strong>
+
+    </div>
+
+    <button
+        class="btn"
+        onclick="goTo('screen7')"
+    >
+        Continue ❤️
+    </button>
+
+</div>
+
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SCREEN 7 — FINAL
+===================================================== -->
+
+<section id="screen7" class="screen">
+
+    <span class="heart h1">💖</span>
+    <span class="heart h2">✨</span>
+    <span class="heart h3">❤️</span>
+    <span class="heart h4">🌸</span>
+
+    <div class="card final-card">
+
+        <div class="final-rakhi">
+            
+        </div>
+
+        <div class="final-title">
+            Happy Raksha<br>
+            Bandhan Karthi Anne! ❤️
+        <div class="final-cartoon">
+
+    <div class="face-circle">
+        <img src="sister.jpeg" alt="Sister">
+    </div>
+
+    <span>❤️</span>
+
+    <div class="face-circle">
+        <img src="brother.jpeg" alt="Brother">
+    </div>
+
+</div>
+
+
+
+        <div class="final-message">
+
+            <strong>Anne,</strong>
+
+            <br><br>
+
+            Thank you for being the annoying,
+            funny, caring 
+            brother that you are. 😂❤️
+
+            <br><br>
+
+            We may fight over the smallest things,
+            but no matter what happens,
+            you will always be someone
+            I'll stand beside.
+
+            <br><br>
+
+            This Rakhi is a little reminder that
+            you are stuck with me forever. 😌
+
+            <br><br>
+
+            <strong>
+                I'll always have your back. ❤️
+            </strong>
+
+            <br><br>
+
+            Happy Raksha Bandhan,Anne! 😍
+
+        
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       SCREEN NAVIGATION
+    ===================================================== */
+
+    function goTo(screenId) {
+
+        document.querySelectorAll(".screen").forEach(screen => {
+            screen.classList.remove("active");
+        });
+
+        document.getElementById(screenId).classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =====================================================
+       YES
+    ===================================================== */
+
+    function yesClicked() {
+
+        createConfetti();
+
+        setTimeout(() => {
+            goTo("screen2");
+        }, 400);
+    }
+
+
+    /* =====================================================
+       NO
+    ===================================================== */
+
+    function noClicked() {
+
+        goTo("screen3");
+    }
+
+
+    /* =====================================================
+       LETTER
+    ===================================================== */
+
+    function openLetter() {
+
+        createConfetti();
+
+        setTimeout(() => {
+            goTo("screen4");
+        }, 400);
+    }
+
+
+    /* =====================================================
+       MEMORIES
+    ===================================================== */
+
+    function showMemories() {
+
+        goTo("screen5");
+    }
+
+
+    /* =====================================================
+       SURPRISE
+    ===================================================== */
+
+    function showSurprise() {
+
+        goTo("screen6");
+    }
+
+
+    /* =====================================================
+       GIFT
+    ===================================================== */
+
+function openGift() {
+
+    const gift = document.getElementById("giftBox");
+    const reveal = document.getElementById("rakhiReveal");
+    const instruction = document.getElementById("giftInstruction");
+
+    if (gift.classList.contains("opening")) {
+        return;
+    }
+
+    /* Prevent clicking again */
+    gift.classList.add("opening");
+
+    /* Change text immediately */
+    instruction.innerHTML =
+        "Something special is waiting for you... ❤️";
+
+    /* First celebration */
+    createConfetti();
+
+    /* Reveal Rakhi after gift disappears */
+    setTimeout(() => {
+
+        gift.style.display = "none";
+
+        instruction.innerHTML =
+            "A little promise from your sister... 🥹";
+
+        reveal.classList.add("show");
+
+        createConfetti();
+
+    }, 1200);
+}
+
+    /* =====================================================
+       CONFETTI
+    ===================================================== */
+
+    function createConfetti() {
+
+        const symbols = [
+            "❤️",
+            "💗",
+            "💖",
+            "✨",
+            "🌸",
+            "🎉",
+            "🪢",
+            "⭐"
+        ];
+
+        for (let i = 0; i < 60; i++) {
+
+            const piece = document.createElement("div");
+
+            piece.className = "confetti";
+
+            piece.innerHTML =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            piece.style.left =
+                Math.random() * 100 + "vw";
+
+            piece.style.fontSize =
+                (12 + Math.random() * 18) + "px";
+
+            piece.style.animationDuration =
+                (2 + Math.random() * 3) + "s";
+
+            piece.style.animationDelay =
+                Math.random() * .5 + "s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(() => {
+                piece.remove();
+            }, 6000);
+        }
+    }
+
+
+    /* =====================================================
+       FINAL CELEBRATION
+    ===================================================== */
+
+    function celebrate() {
+
+    createConfetti();
+
+    const wish =
+        document.getElementById("finalWish");
+
+    wish.classList.add("show");
+
+    setTimeout(() => {
+        createConfetti();
+    }, 1000);
+
+    setTimeout(() => {
+        createConfetti();
+    }, 2200);
+}
+
+
+    /* =====================================================
+       SIMPLE MUSIC CHIME
+    ===================================================== */
+
+    let audioContext = null;
+    let musicOn = false;
+
+    function toggleMusic() {
+
+        if (!audioContext) {
+
+            audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+        }
+
+        musicOn = !musicOn;
+
+        const button =
+            document.querySelector(".music-button");
+
+        button.innerHTML =
+            musicOn ? "🔊" : "♫";
+
+        if (musicOn) {
+            playChime();
+        }
+    }
+
+
+    function playChime() {
+
+        if (!musicOn) return;
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+        oscillator.frequency.value = 523.25;
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            audioContext.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.12,
+            audioContext.currentTime + .05
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioContext.currentTime + .8
+        );
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime + .8
+        );
+    }
+
+</script>
+
+</body>
+
+</html>
